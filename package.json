@@ -1,0 +1,32 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.26.9",
+        "@babel/preset-env": "^7.26.9",
+        "@eslint/js": "^9.25.1",
+        "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-vue": "^5.2.1",
+        "autoprefixer": "^10.4.20",
+        "axios": "^1.7.4",
+        "babel-eslint": "^10.1.0",
+        "bootstrap": "^5.2.3",
+        "concurrently": "^9.0.1",
+        "eslint": "^9.25.1",
+        "eslint-plugin-vue": "^9.33.0",
+        "globals": "^16.0.0",
+        "laravel-vite-plugin": "^1.2.0",
+        "postcss": "^8.4.47",
+        "sass": "^1.56.1",
+        "tailwindcss": "^3.4.13",
+        "vite": "^6.0.11"
+    },
+    "dependencies": {
+        "vue": "^3.5.13",
+        "vue-loader": "^17.4.2"
+    }
+}
