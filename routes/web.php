@@ -29,6 +29,12 @@ Route::get('/2fa', [TwoFactorController::class, 'index'])->name('2fa.index');
 Route::post('/2fa', [TwoFactorController::class, 'store'])->name('2fa.store');
 
 
+
+use App\Http\Controllers\CryptoController;
+
+Route::get('/crypto', [CryptoController::class, 'Crypto']);
+
+
  /*use App\Http\Controllers\UserController;
 use App\Http\Controllers\BetslipController;
 use App\Http\Controllers\LoserController;
