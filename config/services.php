@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+
+'cryto Api key'=>[
+
+    'key'=>env('CRYPTO API KEY'),
+]
+
 ];
