@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TwoFactorController extends Controller
 {
@@ -24,9 +25,11 @@ class TwoFactorController extends Controller
         }
 
         $user->resetTwoFactorCode();
-        //auth()->login($user);
 
-        return redirect()->intended(); // Redirect to intended page
+        $auth=auth();
+        auth()->Login($user);
+
+        return redirect()->intended('/Home');
+        // Redirect to intended page
     }
 }
-

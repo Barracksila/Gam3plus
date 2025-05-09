@@ -13,9 +13,9 @@ Route::post('register', [RegisterController::class, 'register']);
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 
 use App\Http\Controllers\Auth\LoginController;
-Route::get('/Login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('Login');
-Route::post('Login', [LoginController::class, 'Login']);
-Route::post('Logout', [LoginController::class, 'Logout'])->name('Logout');
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('Login');
+Route::post('login', [LoginController::class, 'login']);
+Route::post('/Logout', [App\Http\Controllers\Auth\LoginController::class, 'Logout'])->name('Logout');
 
 
 Route::get('/Home', function () {
@@ -68,6 +68,5 @@ Route::prefix('rewards')->group(function () {
 routes/web.php
 
 */
-
 
 
