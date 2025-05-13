@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Notifications\TwoFactorCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Auth\TwoFactorCodeCode;
 class LoginController extends Controller
 {
     //In thee login Controller we Validate and post the  request
@@ -32,7 +34,7 @@ public function login(Request $request)
 public function Logout(Request $request){
 //Log out the user
 
-    Auth::logout();
+    Auth::Logout();
 
 //
 
@@ -44,13 +46,20 @@ $request->session()->regenerateToken();
 // Redirect the user to the login page
 return redirect()->route('login')->with('message', 'You have logged out successfully!');
 }
-public function authenticated(Request $request, $user){
 
 
-$user->generateTwoFactorCode();
+public function authenticated(Request $request, $user)
+{
+    $code = rand(100000, 999999); // or use a more secure code generator
+    $user->notify(new TwoFactorCode($code));
 
-    return redirect('/2fa');//redirect to the verification page
+    // Optionally, store code in session or DB to verify later
+    session(['login_code' => $code]);
+
+    return redirect()->route('2fa.index');
+
 }
+
 }
 
 

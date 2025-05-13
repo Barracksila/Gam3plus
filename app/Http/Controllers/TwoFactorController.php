@@ -26,8 +26,12 @@ class TwoFactorController extends Controller
 
         $user->resetTwoFactorCode();
 
-        $auth=auth();
-        auth()->Login($user);
+      /** @var \Illuminate\Contracts\Auth\Guard|\Illuminate\Contracts\Auth\StatefulGuard $auth */
+$auth = auth();
+$auth->login($user);
+
+        //auth()->login($user);
+
 
         return redirect()->intended('/Home');
         // Redirect to intended page
