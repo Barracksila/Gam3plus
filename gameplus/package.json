@@ -4,16 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
-  "scripts": {
-  "serve": "vue-cli-service serve",
-  "build": "vue-cli-service build"
-},
-
   "dependencies": {
+    "axios": "^1.9.0",
     "sass": "^1.88.0",
     "sass-loader": "^16.0.5",
     "vue": "^3.5.13",
@@ -22,7 +17,7 @@
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@vitejs/plugin-vue": "^5.2.4",
-    "@vue/cli-service": "^5.0.8",
+    "@vue/cli-service": "^3.3.1",
     "eslint": "^9.26.0",
     "eslint-plugin-vue": "^10.1.0",
     "globals": "^16.1.0",
