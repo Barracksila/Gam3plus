@@ -172,12 +172,12 @@
             <p>Discover the action-packed world of Game 1. Join the adventure today!</p>
         </div>
         <div class="game-card">
-            <img src="https://via.placeholder.com/300x200" alt="Game 2">
+            <img src="{{asset('assets/images/image1.jpg') }}" alt="Game 1">
             <h3>Game Title 2</h3>
             <p>Embark on an epic journey with Game 2. Experience stunning visuals and gameplay.</p>
         </div>
         <div class="game-card">
-            <img src="https://via.placeholder.com/300x200" alt="Game 3">
+            <img src=" https://via.placeholder.com/300x200" alt="Game 3">
             <h3>Game Title 3</h3>
             <p>Game 3 offers thrilling combat and an engaging story. Are you ready for the challenge?</p>
         </div>
@@ -186,7 +186,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 PlayStation Games | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>&copy; 2025 PlayStation Games | <a href="https://cdn.websitepolicies.com/wp-content/uploads/2022/04/privacy-policy-template.pdf">Privacy Policy</a> | <a href="https://policies.google.com/terms?hl=en-US">Terms of Service</a></p>
     </footer>
 
 </body>
