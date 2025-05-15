@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="container mt-5">
-    <h1>Welcome, {{ $user->name }} 👋</h1>
+    <h1>Welcome,  👋</h1>
 
     <div class="card mt-3">
         <div class="card-body">

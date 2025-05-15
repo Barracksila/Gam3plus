@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Login Page</h1>
-    <form method="POST" action="{{ route('Login') }}">
+    <form method="POST" action="{{ route('login') }}">
         @csrf
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br>

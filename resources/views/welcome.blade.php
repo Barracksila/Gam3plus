@@ -69,6 +69,26 @@
             background-color: #005bb5;
         }
 
+        /* Buttons for Login and Register */
+        .auth-buttons {
+            margin-top: 30px;
+        }
+
+        .auth-buttons a {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 35px;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #218838;
+        }
+
         /* Game Cards Section */
         .games-section {
             display: grid;
@@ -133,9 +153,15 @@
 
     <!-- Hero Section -->
     <div class="hero-section">
-        <h1> The best Modern gaming  experience. </h1>
+        <h1> The best Modern gaming experience. </h1>
         <p>Explore the latest PlayStation games and discover new adventures.</p>
         <button class="cta-button">Browse Games</button>
+
+        <!-- Login and Register buttons -->
+        <div class="auth-buttons">
+            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('register') }}">Sign Up</a>
+        </div>
     </div>
 
     <!-- Featured Games Section -->

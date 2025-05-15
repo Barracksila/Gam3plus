@@ -13,7 +13,7 @@ Route::post('register', [RegisterController::class, 'register']);
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 
 use App\Http\Controllers\Auth\LoginController;
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('Login');
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('/Logout', [App\Http\Controllers\Auth\LoginController::class, 'Logout'])->name('Logout');
 
