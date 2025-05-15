@@ -28,12 +28,24 @@ use App\Http\Controllers\CryptoController;
 Route::get('/crypto', [CryptoController::class, 'Crypto']);
 
 
+
+
 use App\Http\Controllers\TwoFactorController;
 
-Route::get('/2fa', [TwoFactorController::class, 'index'])->name('2fa.index');
-Route::post('/2fa/store', [TwoFactorController::class, 'store'])->name('2fa.store');
+Route::get('/2fa', [TwoFactorController::class, 'showForm'])->name('2fa.form');
+Route::post('/2fa', [TwoFactorController::class, 'verify'])->name('2fa.verify');
 
 
+
+use Illuminate\Support\Facades\Mail;
+
+Route::get('/test-mail', function () {
+    Mail::raw('Test email content', function ($message) {
+        $message->to('Hello Barrack')->subject('Test Mail');
+    });
+
+    return 'Test mail sent';
+});
 
 
  /*use App\Http\Controllers\UserController;

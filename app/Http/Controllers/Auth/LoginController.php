@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Notifications\TwoFactorCode;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Auth\TwoFactorCodeCode;
@@ -50,16 +51,11 @@ return redirect()->route('login')->with('message', 'You have logged out successf
 
 public function authenticated(Request $request, $user)
 {
-    $code = rand(100000, 999999); // or use a more secure code generator
-    $user->notify(new TwoFactorCode($code));
-
-    // Optionally, store code in session or DB to verify later
-    session(['login_code' => $code]);
+   $user->generateTwoFactorCode();
 
     return redirect()->route('2fa.index');
 
 }
 
 }
-
 

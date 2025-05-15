@@ -1,39 +1,37 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+
 
 class TwoFactorController extends Controller
 {
-    public function index()
+    // Show the 2FA form
+    public function showForm()
     {
         return view('auth.twofactor');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate(['two_factor_code' => 'required']);
+    // Verify the entered 2FA code
+   public function verify(Request $request)
+{
+    $request->validate([
+        'two_factor_code' => 'required|numeric|digits:6',
+    ]);
 
-        $user = User::where('two_factor_code', $request->two_factor_code)
-            ->where('two_factor_expires_at', '>', now())
-            ->first();
+    /** @var \App\Models\User $user */
+    $user = Auth::user();
 
-        if (!$user) {
-            return redirect()->back()->withErrors(['two_factor_code' => 'The code is invalid or expired.']);
-        }
-
+    if ($user->isTwoFactorCodeValid($request->two_factor_code)) {
         $user->resetTwoFactorCode();
-
-      /** @var \Illuminate\Contracts\Auth\Guard|\Illuminate\Contracts\Auth\StatefulGuard $auth */
-$auth = auth();
-$auth->login($user);
-
-
-
-
-        return redirect()->intended('/Home');
-        // Redirect to intended page
+        Auth::login($user);
+        return redirect()->intended();
     }
+
+    return back()->withErrors(['two_factor_code' => 'Invalid or expired code. Please try again.']);
+}
+
 }
