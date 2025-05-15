@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+/**
+ * @method \Illuminate\Routing\Controller middleware(string|array $middleware, array $options = [])
+ */
 
 class HomeController extends Controller
 {
+   public function index()
+{
+    $user = Auth::user();
+    return view('home', compact('user'));
+}
     /**
      * Create a new controller instance.
      *
@@ -21,8 +31,5 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
+
 }
