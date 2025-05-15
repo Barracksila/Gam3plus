@@ -30,7 +30,7 @@ class TwoFactorController extends Controller
 $auth = auth();
 $auth->login($user);
 
-        //auth()->login($user);
+
 
 
         return redirect()->intended('/Home');
