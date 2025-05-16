@@ -1,50 +1,36 @@
-{{-- File: resources/views/layouts/home.blade.php --}}
-@extends('layouts.app') {{-- Adjust this to match your main layout file (e.g., layouts.master) --}}
-
-@section('title', 'User Dashboard')
+@extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
-    <h1>Welcome,  👋</h1>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-    <div class="card mt-3">
-        <div class="card-body">
-            <h5>Your Account Info</h5>
-            <p><strong>Email:</strong> {{ $user->email }}</p>
-            <p><strong>2FA Code:</strong> {{ $user->two_factor_code ?? 'Not set' }}</p>
-            <p><strong>2FA Expires:</strong> {{ $user->two_factor_expires_at ?? 'N/A' }}</p>
-            <p><strong>Member Since:</strong> {{ $user->created_at->format('d M Y') }}</p>
+            <!-- User Info Card -->
+            <div class="card shadow-sm border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Welcome, {{ Auth::user()->name }}</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Email:</strong> {{ Auth::user()->email }}</p>
+                    <p><strong>Account Created:</strong> {{ Auth::user()->created_at->format('F d, Y') }}</p>
+
+                    @if(Auth::user()->two_factor_expires_at)
+                        <p class="text-success">
+                            <strong>2FA Active</strong> (expires at {{ Auth::user()->two_factor_expires_at->format('H:i:s') }})
+                        </p>
+                    @else
+                        <p class="text-danger"><strong>2FA Not Active</strong></p>
+                    @endif
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <form method="POST" action="{{ route('Logout') }}" class="mt-4">
+                @csrf
+                <button type="submit" class="btn btn-danger w-100">Logout</button>
+            </form>
+
         </div>
-    </div>
-
-    <div class="mt-4">
-        <h3>Your Betslips</h3>
-
-        @if($betslips->isEmpty())
-            <p class="text-muted">You have no betslips yet.</p>
-        @else
-            <table class="table table-bordered mt-2">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Status</th>
-                        <th>Amount</th>
-                        <th>Created At</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($betslips as $betslip)
-                        <tr>
-                            <td>{{ $betslip->id }}</td>
-                            <td>{{ $betslip->status ?? 'Pending' }}</td>
-                            <td>{{ $betslip->amount ?? 'N/A' }}</td>
-                            <td>{{ $betslip->created_at->format('d M Y, H:i') }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        @endif
     </div>
 </div>
 @endsection
-

@@ -18,12 +18,13 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('/Logout', [App\Http\Controllers\Auth\LoginController::class, 'Logout'])->name('Logout');
 
 
-use Illuminate\Support\Facades\Auth;
 
-Route::get('/Home', function () {
-    $user = Auth::user();
-    return view('Home', compact('user'));
-})->middleware('auth');
+
+
+Route::get('/home', function () {
+    return view('home'); // lowercase 'home' for file and URL consistency
+})->middleware('auth')->name('home');
+
 
 
 use App\Http\Controllers\CryptoController;
