@@ -154,7 +154,7 @@
     <!-- Hero Section -->
     <div class="hero-section">
         <h1> The best Modern gaming experience. </h1>
-        <p>Explore the latest PlayStation games and discover new adventures.</p>
+        <p>Explore the latest PlayStation, Meta games and discover new adventures.</p>
         <button class="cta-button">Browse Games</button>
 
         <!-- Login and Register buttons -->

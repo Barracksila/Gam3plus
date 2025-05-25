@@ -15,13 +15,31 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
+
+    protected $casts = [
+    // other casts ...
+    'two_factor_expires_at' => 'datetime',
+];
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    public function isTwoFactorCodeValid(string $code): bool
+    {
+        // Example: compare with stored 2FA code and check expiry
+        return $this->two_factor_code === $code && $this->two_factor_expires_at->isFuture();
+    }
     public function generateTwoFactorCode()
     {
         $this->two_factor_code = rand(100000, 999999);
-        $this->two_factor_expires_at = now()->addMinutes(10); // 10 minutes expiry
-        $this->save();
+    $this->two_factor_expires_at = now()->addMinutes(10);
+    $this->save();
 
-        $this->notify(new TwoFactorCode($this->two_factor_code));
+    $this->notify(new \App\Notifications\TwoFactorCode($this->two_factor_code));
     }
 
     /**

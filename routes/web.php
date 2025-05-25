@@ -18,7 +18,12 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('/Logout', [App\Http\Controllers\Auth\LoginController::class, 'Logout'])->name('Logout');
 
 
+use Illuminate\Support\Facades\Auth;
 
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/'); // or wherever you want to redirect after logout
+})->name('logout');
 
 
 Route::get('/home', function () {
@@ -85,5 +90,4 @@ Route::prefix('rewards')->group(function () {
 routes/web.php
 
 */
-
 

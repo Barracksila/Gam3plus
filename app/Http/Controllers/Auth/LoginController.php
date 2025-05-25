@@ -20,15 +20,14 @@ class LoginController extends Controller
 
 public function login(Request $request)
 {
-    // Validate the incoming request data
-    $credentials = $request->only('email', 'password');
+     $credentials = $request->only('email', 'password');
 
-    // Attempt to log in the user
     if (Auth::attempt($credentials)) {
-        // Redirect or return success
-        return redirect()->intended('/2fa');
+        $user = Auth::user();
+        $user->generateTwoFactorCode(); // generate and send 2FA code here
+
+        return redirect()->route('2fa.form'); // your actual 2FA form route name
     } else {
-        // Handle failed login
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
 }
