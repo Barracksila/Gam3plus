@@ -57,6 +57,15 @@ Route::get('/test-mail', function () {
 });
 
 
+
+
+
+use App\Http\Controllers\CryptoWalletController;
+
+Route::get('/wallet', [CryptoWalletController::class, 'show']);
+
+
+
  /*use App\Http\Controllers\UserController;
 use App\Http\Controllers\BetslipController;
 use App\Http\Controllers\LoserController;
