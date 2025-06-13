@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id('Admin_id');
             $table->timestamps();
             $table->string('Admin_Name');
-            $table->int('PhoneNumber');
+           $table->integer('PhoneNumber');
             $table->string('Country');
-            $table->string('Avatar');  
-            $table->varchar('email');   
+            $table->string('Avatar');
+            $table->string('email', 150);
+
         });
     }
 

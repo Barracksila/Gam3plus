@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('Visitor_Name');
             $table->string('Country');
             $table->string('Avatar');
-            $table->varchar('email');
+            $table->string('name', 100);
+
 
         });
     }

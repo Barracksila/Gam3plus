@@ -16,7 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('Country');
             $table->string('Avatar');
-            $table->int('PhoneNumber');
+            $table->integer('PhoneNumber');
+
 
         });
     }

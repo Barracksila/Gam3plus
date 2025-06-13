@@ -70,12 +70,6 @@ Route::get('/wallet/{address}', [CryptoWalletController::class, 'getWalletInfo']
 
 
 
-use App\Http\Controllers\SubscriptionController;
-
-Route::get('/subscribe', [SubscriptionController::class, 'index'])->name('subscription.index');
-Route::post('/subscribe', [SubscriptionController::class, 'store'])->name('subscription.store');
-
-
  /*use App\Http\Controllers\UserController;
 use App\Http\Controllers\BetslipController;
 use App\Http\Controllers\LoserController;

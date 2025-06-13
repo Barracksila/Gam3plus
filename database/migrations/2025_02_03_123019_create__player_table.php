@@ -16,9 +16,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('Player_Name');
             $table->string('Country');
-            $table->varchar('email');
-            $table->string('Avatar'); 
-            $table->int('Phone_Number');
+          $table->string('email');
+            $table->string('Avatar');
+            $table->integer('Phone_Number');
         });
     }
 
