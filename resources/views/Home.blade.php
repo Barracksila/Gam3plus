@@ -30,6 +30,12 @@
                 <button type="submit" class="btn btn-danger w-100">Logout</button>
             </form>
 
+            <!-- Example Login and Sign Up Buttons (Add where needed) -->
+            <div class="mt-4 d-flex justify-content-between">
+                <a href="{{ route('login') }}" class="btn btn-primary w-45">Login</a>
+                <a href="{{ route('register') }}" class="btn btn-primary w-45">Sign Up</a>
+            </div>
+
         </div>
     </div>
 </div>
