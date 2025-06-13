@@ -64,6 +64,7 @@ use App\Http\Controllers\CryptoWalletController;
 
 Route::get('/wallet', [CryptoWalletController::class, 'show']);
 
+Route::get('/wallet/{address}', [CryptoWalletController::class, 'getWalletInfo']);
 
 
  /*use App\Http\Controllers\UserController;

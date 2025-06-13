@@ -37,7 +37,7 @@ return [
 
 
 'cryto Api key'=>[
-
+    'base_url' => env('CRYPTO_API_URL'),
     'key'=>env('CRYPTO API KEY'),
 ]
 
