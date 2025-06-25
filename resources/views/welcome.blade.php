@@ -92,6 +92,39 @@
       background-color: #005bb5;
     }
 
+    /* Video Feature Section */
+    .video-feature {
+      padding: 50px 20px;
+      background-color: #1e1e1e;
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .video-container video {
+      width: 640px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .video-description {
+      max-width: 400px;
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .video-description h2 {
+      margin-top: 0;
+      color: #fff;
+    }
+
     /* Game Cards Section */
     .games-section {
       display: grid;
@@ -164,12 +197,8 @@
     }
 
     @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     @media (max-width: 600px) {
@@ -179,6 +208,11 @@
 
       .carousel-item img {
         height: 40px;
+      }
+
+      .video-container {
+        flex-direction: column;
+        align-items: center;
       }
     }
 
@@ -215,6 +249,20 @@
     <button class="cta-button">Browse Games</button>
   </div>
 
+  <!-- 🎥 Video Feature Section -->
+  <div class="video-feature">
+    <div class="video-container">
+      <video controls>
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-description">
+        <h2>Behind the Game</h2>
+        <p>Watch this behind-the-scenes look into how our latest game was created. Featuring interviews with developers, game mechanics breakdowns, and exclusive previews.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Featured Games Section -->
   <div class="games-section">
     <div class="game-card">
@@ -240,10 +288,8 @@
       <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"></div>
       <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
       <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Meta_Platforms_Inc._logo.svg" alt="Meta"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/PlayStation_logo.svg" alt="PlayStation"></div>
-      <!-- Duplicate for infinite effect -->
+      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple
+ <!-- Duplicate for infinite effect -->
       <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"></div>
       <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
       <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google"></div>
