@@ -1,23 +1,26 @@
 <template>
-  <div>
-    <h1>{{ message }}</h1>
-  </div>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+<script>
+import HelloWorld from './components/HelloWorld.vue'
 
-const message = ref('Loading...')
-
-onMounted(() => {
-  axios.get('http://127.0.0.1:8000/api/hello')
-    .then(response => {
-      message.value = response.data.message
-    })
-    .catch(error => {
-      console.error('API Error:', error)
-      message.value = 'Failed to fetch'
-    })
-})
+export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  }
+}
 </script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
