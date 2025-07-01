@@ -1,4 +1,9 @@
-import { defineConfig } from '@vue/cli-service'
-export default defineConfig({
-  transpileDependencies: true
-})
+
+module.exports = {
+  // Example:
+  devServer: {
+    port: 8080
+  },
+  lintOnSave: false
+}
+
