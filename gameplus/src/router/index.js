@@ -1,15 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import LeaderboardPage from '../views/LeaderboardPage.vue'
-import Home from '../views/Home.vue' // Optional home page
+import { createRouter, createWebHistory } from 'vue-router';
+import LeaderboardPage from '../components/Dashboard/Leaderboard.vue';
+import RewardPage from '../components/Dashboard/RewardPage.vue';
+import WinnerPage from '../components/Dashboard/WinnerPage.vue';
+import CryptoPayment from '../components/Dashboard/CryptoPayment.vue';
+import NewsPage from '../components/Dashboard/NewsPage.vue';
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/leaderboard', name: 'Leaderboard', component: LeaderboardPage }
-]
+  { path: '/dashboard/leaderboard', component: LeaderboardPage },
+  { path: '/dashboard/rewards', component: RewardPage },
+  { path: '/dashboard/winners', component: WinnerPage },
+  { path: '/dashboard/crypto-payment', component: CryptoPayment },
+  { path: '/dashboard/news', component: NewsPage },
+  { path: '/', redirect: '/dashboard/leaderboard' }
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
