@@ -28,8 +28,7 @@ class TwoFactorController extends Controller
     if ($user->isTwoFactorCodeValid($request->two_factor_code)) {
         $user->resetTwoFactorCode();
         Auth::login($user);
-        return redirect()->intended();
-    }
+        return redirect('/dashboard');    }
 
     return back()->withErrors(['two_factor_code' => 'Invalid or expired code. Please try again.']);
 }

@@ -33,8 +33,7 @@ Route::get('/home', function () {
 
 
 use App\Http\Controllers\CryptoController;
-
-Route::get('/crypto', [CryptoController::class, 'Crypto']);
+Route::get('/crypto', [CryptoController::class, 'index']);
 
 
 
@@ -69,6 +68,16 @@ Route::get('/wallet/{address}', [CryptoWalletController::class, 'getWalletInfo']
 
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+
+
+
+Route::get('/{any}', function () {
+    return view('vueapp'); // or whatever your Blade file is named
+})->where('any', '.*');
 
 
  /*use App\Http\Controllers\UserController;

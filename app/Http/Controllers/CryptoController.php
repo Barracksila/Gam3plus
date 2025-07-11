@@ -19,6 +19,6 @@ class CryptoController extends Controller
         public function index()
         {
             $data = $this->crypto->getPrices();
-            return view('crypto.index', compact('data'));
+            return view('index', compact('data'));
         }
 }
