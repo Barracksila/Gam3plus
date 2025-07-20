@@ -52,7 +52,7 @@ public function authenticated(Request $request, $user)
 {
    $user->generateTwoFactorCode();
 
-    return redirect()->route('2fa.index');
+    return redirect('2fa.index')->route();
 
 }
 
