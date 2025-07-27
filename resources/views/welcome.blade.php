@@ -265,6 +265,7 @@
 
  <!-- Featured Games Section -->
 <div class="games-section">
+  <!-- Existing game cards here... -->
   <div class="game-card">
     <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Spider-Man_PS4_cover.jpg" alt="Spider-Man" />
     <h3><a href="https://www.playstation.com/en-us/games/marvels-spider-man/" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Spider-Man</a></h3>
@@ -282,6 +283,11 @@
     <h3><a href="https://www.mortalkombat.com/" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Mortal Kombat 11</a></h3>
     <p>Enter the brutal fighting arena with the latest Mortal Kombat game featuring stunning visuals and intense combat.</p>
   </div>
+</div>
+
+<!-- Soon to Partner Section -->
+<div style="text-align: center; padding: 20px 0; color: #aaa; font-weight: 600; font-size: 1.2rem; background-color: #1a1a1a; margin-top: 30px;">
+  Games Soon to Partner With Us
 </div>
 
 
