@@ -273,8 +273,8 @@
   </div>
 
   <div class="game-card">
-    <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/FIFA_22_Cover_Art.jpg" alt="FIFA 22" />
-    <h3><a href="https://www.ea.com/games/fifa/fifa-22" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">FIFA 22</a></h3>
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/FIFA_22_Cover_Art.jpg" alt="FIFA 25" />
+    <h3><a href="https://www.ea.com/games/fifa/fifa-22" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">FIFA 25</a></h3>
     <p>Experience the excitement of the world's most popular football game with updated teams and realistic gameplay.</p>
   </div>
 
