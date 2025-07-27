@@ -263,36 +263,80 @@
     </div>
   </div>
 
-  <!-- Featured Games Section -->
-  <div class="games-section">
-    <div class="game-card">
-      <img src="https://via.placeholder.com/300x200" alt="Game 1">
-      <h3>Game Title 1</h3>
-      <p>Discover the action-packed world of Game 1. Join the adventure today!</p>
-    </div>
-    <div class="game-card">
-      <img src="{{ asset('assets/images/image1.jpg') }}" alt="Game 2">
-      <h3>Game Title 2</h3>
-      <p>Embark on an epic journey with Game 2. Experience stunning visuals and gameplay.</p>
-    </div>
-    <div class="game-card">
-      <img src="https://via.placeholder.com/300x200" alt="Game 3">
-      <h3>Game Title 3</h3>
-      <p>Game 3 offers thrilling combat and an engaging story. Are you ready for the challenge?</p>
-    </div>
+ <!-- Featured Games Section -->
+<div class="games-section">
+  <div class="game-card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Spider-Man_PS4_cover.jpg" alt="Spider-Man" />
+    <h3><a href="https://www.playstation.com/en-us/games/marvels-spider-man/" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Spider-Man</a></h3>
+    <p>Swing through the streets of New York City and fight crime as Spider-Man in this action-packed adventure.</p>
   </div>
 
-  <!-- Company Logo Carousel -->
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple
- <!-- Duplicate for infinite effect -->
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Meta_Platforms_Inc._logo.svg" alt="Meta"></div>
-      <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/PlayStation_logo
+  <div class="game-card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/FIFA_22_Cover_Art.jpg" alt="FIFA 22" />
+    <h3><a href="https://www.ea.com/games/fifa/fifa-22" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">FIFA 22</a></h3>
+    <p>Experience the excitement of the world's most popular football game with updated teams and realistic gameplay.</p>
+  </div>
+
+  <div class="game-card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/37/Mortal_Kombat_11_cover_art.jpg" alt="Mortal Kombat 11" />
+    <h3><a href="https://www.mortalkombat.com/" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Mortal Kombat 11</a></h3>
+    <p>Enter the brutal fighting arena with the latest Mortal Kombat game featuring stunning visuals and intense combat.</p>
+  </div>
+</div>
+
+
+<!-- Company Logo Carousel -->
+<div class="carousel-container">
+  <div class="carousel-track">
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Meta_Platforms_Inc._logo.svg" alt="Meta" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/PlayStation_logo.svg" alt="PlayStation" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Nvidia_logo.svg" alt="Nvidia" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/AMD_Logo.svg" alt="AMD" />
+    </div>
+
+    <!-- Duplicate for infinite scroll effect -->
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Meta_Platforms_Inc._logo.svg" alt="Meta" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/PlayStation_logo.svg" alt="PlayStation" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Nvidia_logo.svg" alt="Nvidia" />
+    </div>
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/AMD_Logo.svg" alt="AMD" />
+    </div>
+  </div>
+</div>
