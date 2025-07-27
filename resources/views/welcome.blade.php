@@ -287,62 +287,122 @@
 
 <!-- Soon to Partner Section -->
 <div style="text-align: center; padding: 20px 0; color: #aaa; font-weight: 600; font-size: 1.2rem; background-color: #1a1a1a; margin-top: 30px;">
-  Games Soon to Partner With Us
+  Compaies Soon to Partner With Us
 </div>
 
 
-<!-- Company Logo Carousel -->
 <div class="carousel-container">
   <div class="carousel-track">
+
     <div class="carousel-item">
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
-    </div>
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
-    </div>
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google" />
-    </div>
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
-    </div>
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Meta_Platforms_Inc._logo.svg" alt="Meta" />
-    </div>
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/PlayStation_logo.svg" alt="PlayStation" />
-    </div>
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Nvidia_logo.svg" alt="Nvidia" />
-    </div>
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/AMD_Logo.svg" alt="AMD" />
     </div>
 
-    <!-- Duplicate for infinite scroll effect -->
-    <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
-    </div>
     <div class="carousel-item">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
     </div>
+
     <div class="carousel-item">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google" />
     </div>
+
     <div class="carousel-item">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
     </div>
+
     <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Meta_Platforms_Inc._logo.svg" alt="Meta" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta" />
     </div>
+
     <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/PlayStation_logo.svg" alt="PlayStation" />
+      <img src="https://seeklogo.com/images/P/playstation-logo-7D4AE153C5-seeklogo.com.png" alt="PlayStation" />
     </div>
+
     <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Nvidia_logo.svg" alt="Nvidia" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/1200px-Nvidia_logo.svg.png" alt="Nvidia" />
     </div>
+
     <div class="carousel-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/AMD_Logo.svg" alt="AMD" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/AMD_Logo.svg/1024px-AMD_Logo.svg.png" alt="AMD" />
     </div>
+
+    <!-- New Payment Logos -->
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
+    </div>
+
+    <!-- Crypto Logos -->
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin" style="filter:none;" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" alt="Ethereum" style="filter:none;" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Binance_Logo.png" alt="Binance" style="filter:none;" />
+    </div>
+
+    <!-- Duplicate for infinite scroll -->
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png" alt="Google" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" alt="Meta" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://seeklogo.com/images/P/playstation-logo-7D4AE153C5-seeklogo.com.png" alt="PlayStation" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/1200px-Nvidia_logo.svg.png" alt="Nvidia" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/AMD_Logo.svg/1024px-AMD_Logo.svg.png" alt="AMD" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin" style="filter:none;" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" alt="Ethereum" style="filter:none;" />
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Binance_Logo.png" alt="Binance" style="filter:none;" />
+    </div>
+
   </div>
 </div>
