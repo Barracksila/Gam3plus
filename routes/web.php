@@ -75,8 +75,8 @@ Route::get('/dashboard', function () {
 
 
 
-Route::get('/vueapp', function () {
-    return view('vueapp'); // or whatever your Blade file is named
+Route::get('/{any}', function () {
+    return view('ResultsTable'); // or whatever your Blade file is named
 })->where('any', '.*');
 
 

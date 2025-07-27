@@ -9,6 +9,9 @@ class PlayerSeeder extends Seeder
 {
     public function run(): void
     {
+        // Optional: Clear the table before seeding
+        DB::table('_player')->truncate();
+
         DB::table('_player')->insert([
             [
                 'Player_id'    => 1,

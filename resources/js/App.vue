@@ -1,19 +1,7 @@
-
-
 <template>
-  <div>
-    <h1>Hello from Vue!</h1>
+  <div id="app">
+    <router-link to="/">Results</router-link>
+    <router-link to="/print/1">Print Progress </router-link>
+    <router-view />
   </div>
 </template>
-
-<script>
-export default {
-  name: 'App',
-};
-</script>
-
-<style scoped>
-h1 {
-  color: #42b983;
-}
-</style>
