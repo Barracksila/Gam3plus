@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gam3Plus+</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   <style>
-    /* Global Styles */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -16,14 +18,40 @@
       color: white;
     }
 
-    h1, h2 {
-      margin: 0;
-      padding: 0;
-    }
-
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    /* Header Logo + Smile */
+    .top-nav {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      position: relative;
+      display: inline-block;
+      line-height: 1.2;
+    }
+
+    .smile-arc {
+      width: 60px;
+      height: 30px;
+      border-bottom: 4px solid #0077ff;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
     }
 
     /* Top Right Auth Buttons */
@@ -49,7 +77,6 @@
       background-color: #005bb5;
     }
 
-    /* Hero Section */
     .hero-section {
       background: url('https://via.placeholder.com/1600x900') no-repeat center center;
       background-size: cover;
@@ -92,7 +119,6 @@
       background-color: #005bb5;
     }
 
-    /* Video Feature Section */
     .video-feature {
       padding: 50px 20px;
       background-color: #1e1e1e;
@@ -125,7 +151,6 @@
       color: #fff;
     }
 
-    /* Game Cards Section */
     .games-section {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -166,7 +191,6 @@
       transform: scale(1.05);
     }
 
-    /* Carousel Section */
     .carousel-container {
       overflow: hidden;
       white-space: nowrap;
@@ -216,7 +240,6 @@
       }
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 30px;
@@ -234,7 +257,16 @@
     }
   </style>
 </head>
+
 <body>
+  <!-- Header with Logo -->
+  <div class="top-nav">
+    <div class="logo">
+      Gam3Plus+
+      <div class="smile-arc"></div>
+    </div>
+  </div>
+
 
   <!-- Top Right Login & Sign Up -->
   <div class="auth-buttons">
