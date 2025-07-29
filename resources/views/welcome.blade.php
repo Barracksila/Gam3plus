@@ -278,7 +278,10 @@
   <div class="hero-section">
     <h1>The best Modern gaming experience.</h1>
     <p>Explore the latest PlayStation, Meta games and discover new adventures.</p>
-    <button class="cta-button">Browse Games</button>
+<a href="https://www.epicgames.com/" target="_blank" rel="noopener noreferrer" class="cta-button">
+  Browse Games
+</a>
+
   </div>
 
   <!-- 🎥 Video Feature Section -->
