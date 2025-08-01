@@ -8,86 +8,84 @@
           <th>Country</th>
           <th>Player</th>
           <th>Avatar</th>
+          <th>Email</th>
+          <th>Phone</th>
           <th>Credits</th>
           <th>BTC</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(player, idx) in players" :key="player.Player_id" :class="{ top: idx < 3 }">
-          <td class="rank">
-            <span v-if="idx === 0" class="gold">🥇</span>
-            <span v-else-if="idx === 1" class="silver">🥈</span>
-            <span v-else-if="idx === 2" class="bronze">🥉</span>
-            {{ idx + 1 }}
-          </td>
-          <td class="country-cell">
+          <td>{{ idx + 1 }}</td>
+          <td>
             <img :src="getFlag(player.Country)" alt="flag" />
             <span>{{ player.Country }}</span>
           </td>
-          <td class="player-name">
+          <td>
             <router-link :to="`/print/${player.Player_id}`">{{ player.Player_Name }}</router-link>
           </td>
-          <td class="avatar-cell">
-            <img :src="player.Avatar" alt="avatar" />
-          </td>
-          <td class="credits">${{ formatNumber(randomCredits(player.Player_id)) }}</td>
-          <td class="btc">{{ randomBTC(player.Player_id) }} BTC</td>
+          <td><img :src="player.Avatar" alt="avatar" /></td>
+          <td>{{ player.email }}</td>
+          <td>{{ player.Phone_Number }}</td>
+          <td>${{ formatNumber(randomCredits(player.Player_id)) }}</td>
+          <td>{{ randomBTC(player.Player_id) }} BTC</td>
         </tr>
       </tbody>
     </table>
+
+
   </div>
 </template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 
 const players = ref([])
-
 onMounted(async () => {
   try {
-    const res = await fetch('/api/players')
-    if (!res.ok) throw new Error('Failed to fetch players')
-    players.value = await res.json()
-  } catch (e) {
-    console.error(e)
-  }
-})
+    const res = await fetch('http://localhost:8000/api/players');
 
-const getFlag = country => `https://flagcdn.com/w40/${country.toLowerCase()}.png`
-const randomCredits = id => 12000 + id * 175
-const randomBTC = id => (0.7 + id * 0.09).toFixed(4)
-const formatNumber = n => n.toLocaleString()
+    console.log('Fetch response status:', res.status);
+
+    if (!res.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await res.json();
+    console.log('Data fetched:', data);
+
+    players.value = data;
+  } catch (error) {
+    console.error('Fetch error:', error);
+  }
+});
+
 </script>
 
+
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
 
 .ps-leaderboard {
   max-width: 900px;
   margin: 40px auto;
   padding: 25px 30px;
-  background: #121519;
+  background: #ffffff; /* White background */
   border-radius: 16px;
-  box-shadow:
-    inset 2px 2px 5px #1c2026,
-    inset -2px -2px 8px #0b0d11,
-    0 6px 15px rgba(0, 104, 255, 0.6);
-  font-family: 'Rajdhani', sans-serif;
-  color: #d6e5ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+  color: #1d1f23;
   user-select: none;
-  border: 2px solid #072146;
+  border: 1px solid #e0e6ed;
 }
 
 h1 {
   text-align: center;
   font-size: 2.5rem;
-  color: #00a3ff;
-  text-shadow:
-    0 0 8px #00a3ffcc,
-    0 0 16px #00a3ff88;
+  color: #0044aa; /* Blue title */
   margin-bottom: 25px;
-  letter-spacing: 4px;
-  font-weight: 800;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: none;
 }
 
 table {
@@ -97,80 +95,54 @@ table {
 }
 
 thead th {
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-weight: 600;
+  font-size: 1rem;
   padding: 12px 18px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #8cb6ff;
-  border-bottom: 2px solid #1f2a42;
+  letter-spacing: 1px;
+  color: #555;
+  border-bottom: 2px solid #ccc;
   text-align: left;
 }
 
 tbody tr {
-  background: #1a202b;
+  background: #f9fafc;
   border-radius: 14px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow:
-    3px 3px 8px rgba(0, 0, 0, 0.6),
-    -2px -2px 7px #1f2a42;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 tbody tr.top {
-  background: linear-gradient(90deg, #0041d0, #00a3ff);
-  box-shadow:
-    0 0 15px #00a3ff,
-    inset 0 0 20px #0041d0;
-  color: #e0f0ff;
-  font-weight: 900;
+  background: #e5f0ff;
+  color: #002f6c;
+  font-weight: 700;
 }
 
 tbody tr.top:hover {
-  transform: scale(1.04);
-  box-shadow:
-    0 0 22px #00c3ff,
-    inset 0 0 30px #0061c1;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 80, 180, 0.15);
 }
 
 tbody tr:hover {
   cursor: pointer;
-  transform: translateY(-4px);
-  box-shadow:
-    0 0 15px #00a3ffaa,
-    inset 0 0 10px #0f2c60;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 60, 140, 0.1);
 }
 
 td {
   padding: 15px 18px;
   vertical-align: middle;
   border-collapse: separate;
-  border-spacing: 10px;
-  color: #d6e5ff;
+  color: #1d1f23;
 }
 
 .rank {
-  font-weight: 900;
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.2rem;
   width: 70px;
   text-align: center;
-  color: #00a3ff;
-  text-shadow:
-    0 0 8px #00a3ffcc;
-}
-
-.gold {
-  color: #ffd700;
-  filter: drop-shadow(0 0 4px #ffd700);
-}
-
-.silver {
-  color: #c0c0c0;
-  filter: drop-shadow(0 0 4px #c0c0c0);
-}
-
-.bronze {
-  color: #cd7f32;
-  filter: drop-shadow(0 0 4px #cd7f32);
+  color: #005bbb;
+  text-shadow: none;
 }
 
 .country-cell {
@@ -185,52 +157,54 @@ td {
   width: 36px;
   height: 24px;
   border-radius: 4px;
-  box-shadow:
-    0 0 6px #007fffaa;
   object-fit: cover;
+  border: 1px solid #ccc;
 }
 
 .player-name a {
-  color: #d6e5ff;
-  font-weight: 700;
+  color: #1d1f23;
+  font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .player-name a:hover {
-  color: #00a3ff;
-  text-shadow:
-    0 0 8px #00a3ffcc,
-    0 0 16px #00a3ff99;
+  color: #005bbb;
+  text-decoration: underline;
 }
 
 .avatar-cell img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 2px solid #00a3ff;
-  box-shadow:
-    0 0 10px #00a3ff99;
+  border: 2px solid #ccc;
   object-fit: cover;
 }
 
 .credits,
 .btc {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-align: right;
   padding-right: 20px;
 }
 
 .credits {
-  color: #00d1ff;
-  text-shadow: 0 0 4px #00d1ffcc;
+  color: #0070c9;
+  text-shadow: none;
 }
 
 .btc {
-  color: #a1d4ff;
-  text-shadow: 0 0 3px #a1d4ffbb;
+  color: #4a7ebb;
+  text-shadow: none;
 }
+.result-wrapper {
+  min-height: 100vh;
+  background-color: #e5f4ff; /* Light blue or aqua */
+  padding: 40px;
+  color: #002b55;
+  font-family: 'Inter', sans-serif;
+}
+
 </style>

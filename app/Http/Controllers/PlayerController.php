@@ -8,12 +8,12 @@ use App\Models\Player;
 class PlayerController extends Controller
 {
     // Return all players as JSON
-   public function index()
+  public function index()
 {
-    $players = Player::all();
+    $players = \App\Models\Player::all();
+    \Log::info('Players fetched:', ['count' => $players->count()]);
     return response()->json($players);
 }
-
 
 
    public function show($id)
@@ -44,11 +44,15 @@ class PlayerController extends Controller
         }
 
         $request->validate([
-            'Player_name' => 'required',
-            'Player_id' => 'required',
-            'Country' => 'required',
-            'Phone_Number' => 'required',
-        ]);
+    'Player_Name' => 'required|string|max:255',
+    'Country' => 'required|string',
+    'Phone_Number' => 'required|string|max:20',
+    'email' => 'nullable|email'
+]);
+
+$player->update($request->only(['Player_Name', 'Country', 'Phone_Number', 'email']));
+
+
 
         $player->update($request->all());
 

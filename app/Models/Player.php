@@ -16,4 +16,20 @@ class Player extends Model
         'Avatar',
         'Phone_Number'
     ];
+
+public function getCountryFlagUrlAttribute()
+{
+    $map = [
+        'USA' => 'us',
+        'United Kingdom' => 'gb',
+        'Nigeria' => 'ng',
+        'France' => 'fr',
+        'Germany' => 'de',
+        'India' => 'in',
+        // Add more as needed
+    ];
+
+    $code = $map[$this->Country] ?? 'un'; // fallback
+    return "https://flagcdn.com/{$code}.svg";
+}
 }

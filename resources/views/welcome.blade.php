@@ -302,13 +302,14 @@
 <div class="games-section">
   <!-- Existing game cards here... -->
   <div class="game-card">
-    <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Spider-Man_PS4_cover.jpg" alt="Spider-Man" />
+  <img src="{{ asset('images/Spiderman.jpg') }}">
+
     <h3><a href="https://www.playstation.com/en-us/games/marvels-spider-man/" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Spider-Man</a></h3>
     <p>Swing through the streets of New York City and fight crime as Spider-Man in this action-packed adventure.</p>
   </div>
 
   <div class="game-card">
-    <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/FIFA_22_Cover_Art.jpg" alt="FIFA 25" />
+    <img src="{{ asset('images/FIFA23.png.png') }}" alt="FIFA 23" />
     <h3><a href="https://www.ea.com/games/fifa/fifa-22" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">FIFA 25</a></h3>
     <p>Experience the excitement of the world's most popular football game with updated teams and realistic gameplay.</p>
   </div>
