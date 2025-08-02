@@ -4,18 +4,38 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlayerController;
 
-// Example API routes
-Route::get('/example', function () {
-    return response()->json(['message' => 'Hello, world!']);
-});
+
+
+//Route::get('/api/players', function () {
+   // return response()->json([
+        //[
+            //'Player_id' => 1,
+           // 'Player_Name' => 'Alice',
+           // 'Country' => 'Kenya',
+           // 'Avatar' => 'https://example.com/avatar1.png',
+            //'email' => 'alice@example.com',
+          //  'Phone_Number' => '0712345678'
+        //],
+        //[
+           // 'Player_id' => 2,
+            //'Player_Name' => 'Bob',
+            //'Country' => 'Nigeria',
+            //'Avatar' => 'https://example.com/avatar2.png',
+           // 'email' => 'bob@example.com',
+        //    'Phone_Number' => '0801234567'
+     // /  ]
+  ///  ]);
+//});
+
 
 Route::get('/hello', function () {
     return response()->json(['message' => 'Hello from Laravel']);
 });
 
-// Player routes
-Route::get('/players', [PlayerController::class, 'index']);         // Get all players
-Route::get('/players/{id}', [PlayerController::class, 'show']);     // Get player by ID
-Route::post('/players/enroll', [PlayerController::class, 'enroll']); // Add player
-Route::put('/players/{id}', [PlayerController::class, 'change']);   // Update player
-Route::delete('/players/{id}', [PlayerController::class, 'destroy']); // Delete player
+Route::prefix('api')->group(function () {
+    Route::get('/players', [PlayerController::class, 'index']);
+    Route::get('/players/{id}', [PlayerController::class, 'show']);
+    Route::post('/players', [PlayerController::class, 'store']);
+    Route::put('/players/{id}', [PlayerController::class, 'update']);
+    Route::delete('/players/{id}', [PlayerController::class, 'destroy']);
+});

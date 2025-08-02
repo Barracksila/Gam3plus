@@ -6,30 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Player extends Model
 {
-    protected $table = '_player';
-    protected $primaryKey = 'Player_id';
-    public $timestamps = true;
+    // If your table name is players, no need to specify table property
+    // Otherwise:
+    // protected $table = 'players';
+
+    // Fillable or guarded depending on your setup
     protected $fillable = [
         'Player_Name',
         'Country',
-        'email',
         'Avatar',
-        'Phone_Number'
+        'email',
+        'Phone_Number',
+        // any other columns
     ];
 
-public function getCountryFlagUrlAttribute()
-{
-    $map = [
-        'USA' => 'us',
-        'United Kingdom' => 'gb',
-        'Nigeria' => 'ng',
-        'France' => 'fr',
-        'Germany' => 'de',
-        'India' => 'in',
-        // Add more as needed
-    ];
-
-    $code = $map[$this->Country] ?? 'un'; // fallback
-    return "https://flagcdn.com/{$code}.svg";
-}
+    public $timestamps = false; // If your table doesn't have created_at, updated_at
 }

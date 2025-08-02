@@ -7,13 +7,12 @@ use App\Models\Player;
 
 class PlayerController extends Controller
 {
-    // Return all players as JSON
-  public function index()
-{
-    $players = \App\Models\Player::all();
-    \Log::info('Players fetched:', ['count' => $players->count()]);
-    return response()->json($players);
-}
+    public function index()
+    {
+        $players = Player::all(); // Fetch all players from DB
+        return response()->json($players);
+    }
+
 
 
    public function show($id)

@@ -75,8 +75,9 @@ Route::get('/dashboard', function () {
 
 
 
+// routes/web.php
 Route::get('/{any}', function () {
-    return view('ResultsTable'); // or whatever your Blade file is named
+    return view('ResultsTable');  // or your blade file name
 })->where('any', '.*');
 
 

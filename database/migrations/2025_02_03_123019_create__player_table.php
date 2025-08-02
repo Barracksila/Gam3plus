@@ -1,45 +1,26 @@
 <?php
 
-namespace Database\Seeders;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-
-class PlayerSeeder extends Seeder
-{
-    public function run(): void
+return new class extends Migration {
+    public function up(): void
     {
-        DB::table('_player')->insert([
-            [
-                'Player_id'    => 1,
-                'Player_Name'  => 'SpeedRacer',
-                'Country'      => 'KE',
-                'email'        => 'speedracer@example.com',
-                'Avatar'       => 'https://i.pravatar.cc/40?img=1',
-                'Phone_Number' => 123456789,
-                'created_at'   => now(),
-                'updated_at'   => now(),
-            ],
-            [
-                'Player_id'    => 2,
-                'Player_Name'  => 'TurboFlash',
-                'Country'      => 'US',
-                'email'        => 'turboflash@example.com',
-                'Avatar'       => 'https://i.pravatar.cc/40?img=2',
-                'Phone_Number' => 987654321,
-                'created_at'   => now(),
-                'updated_at'   => now(),
-            ],
-            [
-                'Player_id'    => 3,
-                'Player_Name'  => 'NitroNova',
-                'Country'      => 'GB',
-                'email'        => 'nitronova@example.com',
-                'Avatar'       => 'https://i.pravatar.cc/40?img=3',
-                'Phone_Number' => 555123456,
-                'created_at'   => now(),
-                'updated_at'   => now(),
-            ],
-        ]);
+        Schema::create('players', function (Blueprint $table) {
+            $table->id('Player_id');
+            $table->string('Player_Name');
+            $table->string('Country');
+            $table->string('Avatar');
+            $table->string('email');
+            $table->string('Phone_Number');
+            $table->timestamps();
+        });
     }
-}
+
+    public function down(): void
+    {
+        Schema::dropIfExists('players');
+    }
+};
+
